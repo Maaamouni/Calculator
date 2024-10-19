@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Tip Calculator</h1>
+        <p>Enter the bill amount and tip percentge to calculate the total.</p>
+        <p>Bill amount:</p>
+        <input id="bill" type="number">
+        <p>Tip percentage:</p>
+        <input id="pourcentage" type="number"><br/><br/>
+        
+        <button id="calculate">CALCULATE</button>
+
+        <p>Total:</p>
+
+        <span id="total"></span>
+    </div>
+    <script>
+        const billentry = document.getElementById("bill");
+        const tipentry = document.getElementById("pourcentage");
+        const cal = document.getElementById("calculate");
+        const totalout = document.getElementById("total");
+
+        function fct1(){
+            const billvalue = billentry.value;
+            const tipvalue = tipentry.value;
+            const tot = billvalue*(1+tipvalue/100);
+            totalout.innerText = tot.toFixed(2);
+        }
+        cal.addEventListener("click", fct1);
+
+    </script>
+
+</body>
+</html>
